@@ -19,14 +19,69 @@ import four from "../assets/images/four.jpg";
 import five from "../assets/images/five.jpg";
 import { useState } from "react";
 
-const banners = [`${two}`, `${one}`, `${five}`, `${three}`, `${four}`];
+// const banners = [${two}, ${one}, ${five}, ${three}, ${four}];
+// const categories = [
+//   "Men's Cargo Pants",
+//   "Men's Jeans",
+//   "Women's Cargo Pants",
+//   "Women's Jeans",
+//   "Tops",
+//   "Casual Wear",
+//   "Party Wear",
+// ];
+
+// const services = [
+//   {
+//     icon: <TbTruckDelivery />,
+//     title: "FREE AND FAST DELIVERY",
+//     description: "Free delivery within 24 hours",
+//   },
+//   {
+//     icon: <LuShieldCheck />,
+//     title: "SECURE PAYMENT",
+//     description: "100% secure payment",
+//   },
+//   {
+//     icon: <FaHeadset />,
+//     title: "24/7 SUPPORT",
+//     description: "Get support 24/7",
+//   },
+// ];
+
+// const Home = () => {
+//   const { data, isError, isLoading } = useLatestProductsQuery("");
+//   const [categorie, setCategort] = useState(categories);
+//   const dispatch = useDispatch();
+
+//   const addToCartHandler = (cartItem: CartItem) => {
+//     if (cartItem.stock < 1) return toast.error("Out of Stock");
+//     dispatch(addToCart(cartItem));
+//     toast.success("Added to cart");
+//   };
+
+//   if (isError) toast.error("Cannot Fetch the Products");
+
+//   const coverMessage =
+//     "Fashion isn't just clothes; it's a vibrant language.a conversation starter with every bold print. It's a way to tell our story, a confidence booster. From elegance to rebellion, fashion lets us navigate the world in style.".split(
+//       " "
+//     );
+
+//   const menhandler = () => {
+//     setCategort(["CARGO MEN", "SHIRT MEN", "CARGO WOMEN"]);
+//   };
+
+//   const womenhandler = () => {
+//     setCategort(["CARGO WOMEN", "TOP", "JEANS MEN", "JEANS WOMEN"]);
+//   };
+const banners = [${two}, ${one}, ${five}, ${three}, ${four}];
 const categories = [
-  "CARGO MEN",
-  "SHIRT MEN",
-  "CARGO WOMEN",
-  "TOP",
-  "JEANS MEN",
-  "JEANS WOMEN",
+  "MEN'S CARGO PANTS",
+  "MEN'S JEANS",
+  "WOMEN'S CARGO PANTS",
+  "WOMEN'S JEANS",
+  "TOPS",
+  "CASUAL WEAR",
+  "PARTY WEAR",
 ];
 
 const services = [
@@ -61,16 +116,16 @@ const Home = () => {
   if (isError) toast.error("Cannot Fetch the Products");
 
   const coverMessage =
-    "Fashion isn't just clothes; it's a vibrant language.a conversation starter with every bold print. It's a way to tell our story, a confidence booster. From elegance to rebellion, fashion lets us navigate the world in style.".split(
+    "Fashion isn't just clothes; it's a vibrant language. A conversation starter with every bold print. It's a way to tell our story, a confidence booster. From elegance to rebellion, fashion lets us navigate the world in style.".split(
       " "
     );
 
   const menhandler = () => {
-    setCategort(["CARGO MEN", "SHIRT MEN", "CARGO WOMEN"]);
+    setCategort(["MEN'S CARGO PANTS", "MEN'S SHIRTS", "MEN'S CARGO"]);
   };
 
   const womenhandler = () => {
-    setCategort(["CARGO WOMEN", "TOP", "JEANS MEN", "JEANS WOMEN"]);
+    setCategort(["WOMEN'S CARGO PANTS", "WOMEN'S TOPS", "WOMEN'S JEANS", "WOMEN'S JEANS"]);
   };
 
   return (
@@ -80,17 +135,17 @@ const Home = () => {
   <h1>Collections</h1>
         <div>
           <aside className=" flex flex-col items-center p-1 ">
-          
+
             <div className="flex  text-black text-1xl m-3">
             <button className=" bg-slate-100 rounded-lg p-1 m-1 w-min " onClick={menhandler}>MEN</button>
             <button className=" bg-slate-100 rounded-lg p-1 m-1 w-min" onClick={womenhandler}>WOMEN</button>
             </div>
-          
+
             <ul>
               {categorie.map((i) => (
                 <li key={i}>
                   <Link
-                    to={`/search?category=${i.toLowerCase()}`}
+                    to={/search?category=${i.toLowerCase()}}
                     className="text-black "
                   >
                     {i}
