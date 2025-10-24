@@ -6,7 +6,6 @@ import { config } from "dotenv";
 import morgan from "morgan";
 import Stripe from "stripe";
 import cors from "cors";
-import { v2 as cloudinary } from "cloudinary";
 
 // Importing Routes
 import userRoute from "./routes/user.js";
